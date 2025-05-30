@@ -1,63 +1,144 @@
-# Yes-And-Game-Paper: Dataset for Improvised Story Co-Creation
-This repository contains datasets associated with the paper:
-"When Hallucinations are Good: Building AI Agents for Co-Creation of Improvised Stories"
+# Yes-And-Game Dataset: Improvised Story Co-Creation
 
-## Overview
-This dataset comprises textual 'Yes! And...' games, including both human-human (HH) and AI-human (AIH) interactions. These games were collected and analyzed as part of a study on computational creativity and human-AI collaboration in improvised storytelling.
+[![Paper](https://img.shields.io/badge/Paper-ICCC'25-blue)](https://computationalcreativity.net/iccc25/)
+[![Dataset](https://img.shields.io/badge/Dataset-Available-green)](#dataset-files)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-## Repository Structure
+This repository contains datasets from the paper **"Playing Along: Building AI Agents for Co-Creation of Improvised Stories"** accepted at the International Conference on Computational Creativity (ICCC) 2025.
+
+## 📖 About
+
+This dataset captures textual **"Yes! And..."** improvisational storytelling games between human pairs (HH) and AI agents with humans (AIH). The "Yes! And..." principle is a fundamental tenet of improvisation where participants must accept their partner's contributions and build upon them, creating collaborative narratives in real-time.
+
+### Key Statistics
+- **Total Stories**: 204 games
+- **Human-Human (HH)**: 129 stories from 82 participants  
+- **AI-Human (AIH)**: 75 stories from 45 participants
+- **AI Model**: GPT-4 with specialized prompting for improvisational storytelling
+- **Average Story Length**: ~13-18 sentences per game
+
+## 🗂️ Repository Structure
+
+```
 Yes-And-Game-Paper/
-│
-└── Story Datasets/
-    ├── aih_stories.json
-    └── hh_stories.json
+├── README.md
+├── LICENSE  
+└── Story_Datasets/
+    ├── aih_stories.json    # AI-Human collaborative stories
+    └── hh_stories.json     # Human-Human collaborative stories
+```
 
-## Dataset Description
-## AIH Stories (aih_stories.json)
-This file contains the AI-Human interaction stories. Each story is represented as a JSON object with the following structure:
+## 📊 Dataset Description
+
+### Human-AI Stories (`aih_stories.json`)
+Stories created through collaboration between human participants and GPT-4 agents.
+
+**JSON Structure:**
+```json
 {
-  "id": "AIH_X",
+  "id": "AIH_001",
   "messages": [
-    {"role": "human", "content": "..."},
-    {"role": "ai", "content": "..."},
-    ...
+    {
+      "role": "human", 
+      "content": "Remember when we went to that mysterious island?"
+    },
+    {
+      "role": "ai", 
+      "content": "Yes, and the trees there were singing ancient melodies!"
+    },
+    {
+      "role": "human", 
+      "content": "Yes! And we followed the music deeper into the forest."
+    }
   ],
-  "num_messages": N,
-  "num_words": M
+  "num_messages": 12,
+  "num_words": 156
 }
+```
 
-## HH Stories (hh_stories.json)
-This file contains the Human-Human interaction stories. Each story is represented as a JSON object with the following structure:
+### Human-Human Stories (`hh_stories.json`)
+Stories created through collaboration between pairs of human participants.
+
+**JSON Structure:**
+```json
 {
-  "id": "HH_X",
+  "id": "HH_001", 
   "messages": [
-    {"role": "human1", "content": "..."},
-    {"role": "human2", "content": "..."},
-    ...
+    {
+      "role": "human1", 
+      "content": "Do you remember that day at the beach?"
+    },
+    {
+      "role": "human2", 
+      "content": "Yes, and how the sand turned into quicksilver!"
+    },
+    {
+      "role": "human1", 
+      "content": "Yes, and we used it to build a time machine."
+    }
   ],
-  "num_messages": N,
-  "num_words": M
+  "num_messages": 14,
+  "num_words": 142
 }
+```
 
-## Usage
-These datasets can be used for various research purposes, including but not limited to:
+## 🎯 Research Applications
 
-Analyzing patterns in human-human vs. human-AI collaborative storytelling
-Training and evaluating AI models for improvised narrative generation
-Studying turn-taking and coherence in collaborative storytelling
+This dataset enables research in:
 
-## Citation
-If you use this dataset in your research, please cite our paper:
-[Citation will be added upon publication]
+- **Computational Creativity**: Studying AI's creative capabilities in improvisational contexts
+- **Human-AI Collaboration**: Analyzing interaction patterns in creative partnerships  
+- **Narrative Generation**: Training models for collaborative storytelling
+- **Improvisation Studies**: Understanding real-time creative decision-making
+- **Evaluation Frameworks**: Developing metrics for creative AI systems
 
-## License
-[Specify the license under which you're releasing this data, e.g., MIT, CC-BY, etc.]
+## 📈 Evaluation Framework
 
-## Contact
-For any questions regarding this dataset or the associated paper, please contact:
-[Your Name or Research Group]
-[Your Institution]
-[Contact Email]
+Our study employed multiple evaluation approaches:
 
-##Acknowledgments
-We thank all participants who contributed to the creation of these datasets, as well as [any funding bodies or institutions that supported this work].
+- **Human Ratings**: 453 evaluators assessed stories on creativity, interest, surprise, cohesiveness, and agreement
+- **Computational Metrics**: Novelty (semantic distance), surprise (language model perplexity), and engagement measures
+- **Turing Test**: Blind evaluation of story authorship (human vs. AI collaboration)
+
+**Key Finding**: Stories co-created with AI were rated comparably to human-human collaborations and were indistinguishable in blind evaluation.
+
+## 🔗 Related Materials
+
+- **Paper**: "Playing Along: Building AI Agents for Co-Creation of Improvised Stories" (ICCC 2025)
+- **Supplementary Information**: [Available here](https://tinyurl.com/yesandresearch)
+- **Conference**: [ICCC 2025](https://computationalcreativity.net/iccc25/)
+
+## 📄 Citation
+
+If you use this dataset in your research, please cite:
+
+```bibtex
+@inproceedings{vidra2025playing,
+  title={Playing Along: Building AI Agents for Co-Creation of Improvised Stories},
+  author={Vidra, Idan Dov and Kimron, Gal and Noy, Lior and Shamir, Ariel},
+  booktitle={Proceedings of the International Conference on Computational Creativity},
+  year={2025}
+}
+```
+
+## 📧 Contact
+
+**Idan Dov Vidra**  
+Reichman University  
+📧 [idan.vidra@post.runi.ac.il](mailto:idan.vidra@post.runi.ac.il)
+
+**Ariel Shamir**  
+Reichman University  
+📧 [arik@runi.ac.il](mailto:arik@runi.ac.il)
+
+## 🙏 Acknowledgments
+
+We thank all participants who contributed to creating these datasets, the reviewers and organizers of ICCC 2025, and our institutions: Reichman University and Ono Academic College.
+
+## 📋 License
+
+This dataset is released under the [MIT License](LICENSE).
+
+---
+
+*For technical questions about the dataset structure or research methodology, please refer to our paper and supplementary materials.*
