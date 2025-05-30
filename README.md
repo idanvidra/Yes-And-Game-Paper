@@ -127,9 +127,17 @@ If you use this dataset in your research, please cite:
 Reichman University  
 📧 [idan.vidra@post.runi.ac.il](mailto:idan.vidra@post.runi.ac.il)
 
+**Gal Kimron**  
+Reichman University  
+📧 [gal.kimron@post.runi.ac.il](mailto:gal.kimron@post.runi.ac.il)
+
 **Ariel Shamir**  
 Reichman University  
 📧 [arik@runi.ac.il](mailto:arik@runi.ac.il)
+
+**Lior Noy**  
+Ono Academic College  
+📧 [lior.noy@ono.ac.il](mailto:lior.noy@ono.ac.il)
 
 ## 🙏 Acknowledgments
 
