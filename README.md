@@ -23,6 +23,9 @@ This dataset captures textual **"Yes! And..."** improvisational storytelling gam
 Yes-And-Game-Paper/
 ├── README.md
 ├── LICENSE  
+├── examples/
+│   ├── novelty_analysis.py   # End-to-end novelty analysis (script)
+│   └── novelty_metric_analysis.ipynb    # Notebook version of novelty analysis
 └── Story_Datasets/
     ├── aih_stories.json    # AI-Human collaborative stories
     └── hh_stories.json     # Human-Human collaborative stories
@@ -101,6 +104,27 @@ Our study employed multiple evaluation approaches:
 - **Turing Test**: Blind evaluation of story authorship (human vs. AI collaboration)
 
 **Key Finding**: Stories co-created with AI were rated comparably to human-human collaborations and were indistinguishable in blind evaluation.
+
+### Corrected Novelty Metric (Important)
+
+The original novelty analysis compared distances for same-speaker turns and occasionally across story boundaries. The corrected metric now:
+
+- Attributes each consecutive distance to the responding speaker (second in the pair)
+- Computes distances strictly within story boundaries
+
+You can reproduce the corrected results via:
+
+```bash
+python examples/corrected_novelty_analysis.py
+```
+
+or explore interactively with:
+
+```bash
+jupyter notebook examples/novelty_metric_analysis.ipynb
+```
+
+The library implementation in `Metrics/novelty_metric.py` reflects this corrected methodology.
 
 ## 🔗 Related Materials
 
